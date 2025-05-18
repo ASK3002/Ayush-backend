@@ -1,0 +1,17 @@
+{
+  "name": "backnend",
+  "version": "1.0.0",
+  "description": "ASK Backend",
+  "keywords": [
+    "JavaScript",
+    "Backend",
+    "Ayush"
+  ],
+  "license": "ISC",
+  "author": "Ayush Singh Kaushik",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
