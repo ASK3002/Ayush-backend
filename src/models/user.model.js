@@ -2,7 +2,7 @@ import mongoose, {Schema} from 'mongoose';
 
 import jwt from "jsonwebtoken";
 
-import bycrypt from "bycrypt"
+import bcrypt from "bcrypt"
 
 const userSchema = new Schema(
     {
@@ -31,7 +31,7 @@ const userSchema = new Schema(
             type:String,//cloudinary url
             required:true        
         },
-        coverimage:{
+        coverImage:{
             type:String,//cloudinary url
                   
         },
@@ -61,13 +61,13 @@ userSchema.pre("save",async function(next){
     if(!this.isModified("password")){
         return next();
     }
-    this.password = await bycrypt.hash(this.password,10);
+    this.password = await bcrypt.hash(this.password,10);
     next();
 })
 
 userSchema.methods.isPasswordCorect=async function
 (password){
-    await bycrypt.compare(password,this.password)
+    return await bcrypt.compare(password,this.password)
 }
 
 userSchema.methods.generateAccessToken = function(){
@@ -79,7 +79,7 @@ userSchema.methods.generateAccessToken = function(){
     },
     process.env.ACESS_TOKEN_SECRET,
     {
-        expiresIn:process.env.ACESS_TOKEN_EXPIRES_IN
+        expiresIn:process.env.ACCESS_TOKEN_EXPIRES_IN
     })
 }
 userSchema.methods.generateRefreshToken = function(){
