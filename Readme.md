@@ -32,7 +32,7 @@ A robust backend system for a full-stack video streaming platform. This app hand
 
 ```
 src/
-├── config/          # DB and cloud configs
+├── db/          # DB and cloud configs
 ├── controllers/     # Route handlers
 ├── middlewares/     # Auth & error handling
 ├── models/          # Mongoose schemas (Users, Videos, Tweets, etc.)
