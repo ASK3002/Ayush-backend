@@ -31,15 +31,48 @@ A robust backend system for a full-stack video streaming platform. This app hand
 ## 🔧 Project Structure
 
 ```
-src/
-├── db/              # DB and cloud configs
-├── controllers/     # Route handlers
-├── middlewares/     # Auth & error handling
-├── models/          # Mongoose schemas (Users, Videos, Tweets, etc.)
-├── routes/          # API routes
-├── utils/           # Helper functions
-├── index.js         # App entry point
-```
+BackendProject_1/
+├── public/                # Root-level
+│   └── temp/              # transient storage (temporarily stores avatar & coverImage before uploading on cloudinary)
+├── src/
+│   ├── config/
+│   │   └── db.js
+│   ├── controllers/       # All controllers you listed
+│   │   ├── comment.controller.js
+│   │   ├── dashboard.controller.js
+│   │   ├── like.controller.js
+│   │   ├── playlist.controller.js
+│   │   ├── subscription.controller.js
+│   │   ├── tweet.controller.js
+│   │   ├── user.controller.js
+│   │   └── video.controller.js
+│   ├── middlewares/
+│   │   ├── auth.middleware.js
+│   │   └── multer.middleware.js
+│   ├── models/            # All models you listed
+│   │   ├── comment.model.js
+│   │   ├── like.model.js
+│   │   ├── playlist.model.js
+│   │   ├── subscription.model.js
+│   │   ├── tweet.model.js
+│   │   ├── user.model.js
+│   │   └── video.model.js
+│   ├── routes/
+│   │   └── user.routes.js # Consolidated routes
+│   ├── utils/
+│   │   ├── ApiError.js
+│   │   ├── ApiResponse.js
+│   │   ├── asyncHandler.js
+│   │   └── cloudinary.js
+|   ├── .prettierignore  # Prettier config
+|   ├── .prettierrc      # Prettier rules
+│   ├── constants.js     # Project constants
+│   ├── index.js         # Main entry point (replaces server.js)
+│   └── app.js           # Express app config
+├── .env
+├── .gitignore
+├── package.json
+└── package-lock.json
 
 ---
 
