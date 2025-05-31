@@ -6,7 +6,7 @@ import {
     refreshAccessToken,
     changeCurrentPassword,
     getCurrentUser,
-    updateAccoutDetails,
+    updateAccountDetails,
     updateUserAvatar,
     updateUserCoverImage,
     getUserChannelProfile,
@@ -43,7 +43,7 @@ changeCurrentPassword)
 router.route("/current-user").get(verifyJWT,
 getCurrentUser)
 router.route("/update-account").patch(verifyJWT,
-updateAccoutDetails)
+updateAccountDetails)
 router.route("/avatar").patch(verifyJWT,upload.single("avatar"),
 updateUserAvatar)
 router.route("/cover-image").patch(verifyJWT,upload.single("coverImage"),
